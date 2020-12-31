@@ -32,7 +32,9 @@ function snowCanvas() {
     /* 添加Dom结点 */
     var snowcanvas = document.createElement("canvas");
     snowcanvas.id = "snowfall";
-    snowcanvas.width = window.innerWidth;
+    //snowcanvas.width = window.innerWidth;
+	//innerWidth有时候会大于clientWidth
+	snowcanvas.width = document.body.clientWidth;
     snowcanvas.height = document.body.clientHeight;
     snowcanvas.setAttribute("style", "position:absolute; top: 0; left: 0; z-index: 1; pointer-events: none;");
     document.getElementsByTagName("body")[0].appendChild(snowcanvas);
